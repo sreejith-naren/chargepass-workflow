@@ -25,6 +25,6 @@ func TestGetAlbums(t *testing.T) {
     var albums []Album
     json.Unmarshal(w.Body.Bytes(), &albums)
 
-    assert.Equal(t, http.StatusOK, w.Code)
+    assert.Equal(t, http.StatusCreated, w.Code)
     assert.NotEmpty(t, albums)
 }
