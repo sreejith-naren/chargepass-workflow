@@ -15,6 +15,7 @@ type Album struct {
 	
 }
 
+
 // albums slice to seed record album data.
 var albums = []Album{
     {ID: "1", Title: "Blue Train", Artist: "John Coltrane", Price: 56.99},
