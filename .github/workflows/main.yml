@@ -23,6 +23,11 @@ jobs:
     - name: Test
       run: go test -v ./...  
 
+    - name: coverage percent write
+      run: |
+            sudo go test ./... -coverprofile coverage.out -covermode count
+            sudo go tool cover -func coverage.out  
+
     - name: Quality Gate - Test coverage shall be above threshold
       env:
           TESTCOVERAGE_THRESHOLD: 10
