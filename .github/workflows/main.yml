@@ -49,11 +49,10 @@ jobs:
 
     - name: Run golint
       run: |
-            warnings = `golint ./... | wc -l
-            if [$warnings > 0];
-            then
-            echo "one or more formatting mistakes found..."
-            exit 1
+            if ["$(golint ./... -s -l . | wc -l)" -gt 0 ]; then
+              echo "one or more formatting mistakes found..."
+              exit 1
+            fi
 
     - name: Build
       run: go build -v ./...      
