@@ -49,7 +49,7 @@ jobs:
 
     - name: Run golint
       run: |
-            warnings = `golint ./... | wc -l
+            warnings = `golint ./... | wc -l`
             if [$warnings > 0];
               then
               echo "one or more formatting mistakes found..."
