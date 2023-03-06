@@ -45,10 +45,15 @@ jobs:
             fi  
 
     - name: Install golint
-      run: go install golang.org/x/lint/golint@latest
+      run:  go install golang.org/x/lint/golint@latest
 
     - name: Run golint
-      run: golint ./...   
+      run: |
+            warnings = `golint ./... | wc -l
+            if [$warnings > 0];
+            then
+            echo "one or more formatting mistakes found..."
+            exit 1
 
     - name: Build
       run: go build -v ./...      
