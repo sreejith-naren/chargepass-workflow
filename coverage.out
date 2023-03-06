@@ -1,0 +1,10 @@
+mode: set
+github.com/chargepass_workflow/main.go:26.13,33.2 5 0
+github.com/chargepass_workflow/main.go:36.32,38.2 1 1
+github.com/chargepass_workflow/main.go:41.33,46.49 2 0
+github.com/chargepass_workflow/main.go:51.5,52.49 2 0
+github.com/chargepass_workflow/main.go:46.49,48.6 1 0
+github.com/chargepass_workflow/main.go:57.35,62.30 2 0
+github.com/chargepass_workflow/main.go:68.5,68.77 1 0
+github.com/chargepass_workflow/main.go:62.30,63.23 1 0
+github.com/chargepass_workflow/main.go:63.23,66.10 2 0
