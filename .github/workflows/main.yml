@@ -28,7 +28,7 @@ jobs:
             sudo go test ./... -coverprofile coverage.out -covermode count
             sudo go tool cover -func coverage.out  
 
-    - name: Quality Gate - Test coverage shall be above threshold
+    - name: Quality Check - Test coverage shall be above threshold
       env:
           TESTCOVERAGE_THRESHOLD: 10
       run: |
@@ -43,6 +43,12 @@ jobs:
                 echo "Failed"
                 exit 1
             fi  
+
+    - name: Lint Go Code
+        run: |
+          export PATH=$PATH:$(go env GOPATH)/bin
+          go get -u golang.org/x/lint/golint
+          make lint        
 
     - name: Build
       run: go build -v ./...      
