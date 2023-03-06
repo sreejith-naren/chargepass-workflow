@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// album represents data about a record album.
+// Album represents data about a record album.
 type Album struct {
 	ID     string  `json:"id"`
 	Title  string  `json:"title"`
@@ -30,12 +30,12 @@ func main() {
 	router.Run("0.0.0.0:8080")
 }
 
-// getAlbums responds with the list of all albums as JSON.
+// GetAlbums responds with the list of all albums as JSON.
 func GetAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
-// postAlbums adds an album from JSON received in the request body.
+// PostAlbums adds an album from JSON received in the request body.
 func PostAlbums(c *gin.Context) {
 	var newAlbum Album
 
