@@ -54,7 +54,7 @@ jobs:
             echo "Warnings : $warnings"
             if (( $(echo "$warnings $default" | awk '{print ($1 > $2)}') )); then
                 echo "formatting error..."
-                echo "$golint ./..."
+                echo $golint ./...
                 exit 1
             else
               echo "OK"  
